@@ -1,0 +1,23 @@
+### Spring Boot ###
+spring:
+  main:
+    web-application-type: reactive
+  redis:
+    port: 6380
+  webflux:
+    base-path: /${spring.application.name}/v${spring.application.majorVersion}
+
+server:
+  compression:
+    enabled: true
+    mime-types: application/json
+  port: ${port:8780}
+
+management:
+  health:
+    config:
+      enabled: false
+
+logging:
+  level:
+    root: INFO
